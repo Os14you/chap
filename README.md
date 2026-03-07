@@ -9,17 +9,61 @@ Video chapters let viewers jump to specific sections directly from the player's 
 ## Requirements
 
 - `ffmpeg`
-- `python3`
+- `python3` (Python 3.6+)
 
 ## Install
 
+### Linux / macOS
+
 ```bash
-git clone https://github.com/yourname/chap
+git clone https://github.com/Os14you/chap
 cd chap
 sudo ./setup.sh
 ```
 
 `setup.sh` will check for `ffmpeg` and `python3`, then install the `chap` command to `/usr/local/bin/`.
+
+### Windows
+
+#### Option 1: PowerShell installer (recommended)
+
+```powershell
+git clone https://github.com/Os14you/chap
+cd chap
+.\setup.ps1
+```
+
+The installer will:
+- Install chap to `%LOCALAPPDATA%\chap`
+- Add the directory to your user PATH
+- Create a PowerShell function for easy access
+
+> **Note:** Restart your terminal after installation for PATH changes to take effect.
+
+#### Option 2: Run directly (no installation)
+
+```powershell
+git clone https://github.com/Os14you/chap
+cd chap
+.\chap.ps1 video.mp4 "00:00 Intro" "01:30 Main"
+```
+
+#### Installing ffmpeg on Windows
+
+If you don't have ffmpeg installed, use one of these methods:
+
+```powershell
+# Using winget (Windows Package Manager)
+winget install ffmpeg
+
+# Using Chocolatey
+choco install ffmpeg
+
+# Using Scoop
+scoop install ffmpeg
+```
+
+Or download manually from [ffmpeg.org](https://ffmpeg.org/download.html).
 
 ## Usage
 
@@ -83,6 +127,14 @@ Timestamps accept both `MM:SS` and `HH:MM:SS`.
 |--------|-------|--------|
 | MP4    | yes   | yes    |
 | MKV    | yes   | yes    |
+
+## Platform support
+
+| Platform | Status | Install command |
+|----------|--------|-----------------|
+| Linux    | ✅     | `sudo ./setup.sh` |
+| macOS    | ✅     | `sudo ./setup.sh` |
+| Windows  | ✅     | `.\setup.ps1` |
 
 ## Options
 

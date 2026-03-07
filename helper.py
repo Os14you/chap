@@ -2,7 +2,7 @@
 """
 helper.py - Generates an ffmetadata file from chapter definitions.
 
-Called by chap.sh, not directly by the user.
+Called by chap.sh (Linux/macOS) or chap.ps1 (Windows), not directly by the user.
 
 Usage:
   helper.py [-f chapters.txt] ["MM:SS Title" ...] ["HH:MM:SS Title" ...]
